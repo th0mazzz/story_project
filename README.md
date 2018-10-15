@@ -1,1 +1,5 @@
-# story_project
+# Repository For Storytelling Game/Website
+
+## Database Schema
+
+## Description of Sitemap
