@@ -1,5 +1,11 @@
 DEVLOG
 
+sophiaX --2018-10-16 21:03
+Programming Sucks Response
+	    1. Review eachothers code to improve it and to gain understanding
+	    2. Ask teammates for insight first before the internet
+	    3. View existing code before writing more to keep things consistent
+
 sophiaX --2018-10-16 20:51
 Updated the design document.
 	Made it more consistent and thorough
