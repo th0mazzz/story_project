@@ -18,13 +18,19 @@ Every user with an account can create, contribute to and view stories. Users can
 ==============================================================
 ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
 
+LinK --2018-10-17 5:41PM
+-------------------------------------------------------------------------------
+Added checkInfo into auth.py which checks if the inputted username/password
+  match in the userInfo table
+===============================================================================
 
-LinK --2018-10-16 12:29PM
+LinK --2018-10-17 12:29PM
 -------------------------------------------------------------------------------
 Added templates for app.py and auth.py
 Created setupDB.py to set up the database and tables
+===============================================================================
 
-LiX --2018-10-16 12:03PM
+LiX --2018-10-17 12:03PM
 -------------------------------------------------------------------------------
 Added a static folder for our flask app. Within it:
     added a index.html file as the home page featuring a log in screen and a link
