@@ -1,12 +1,35 @@
-DEVLOG
+SKAR
+Sophia Xia
+Kevin Lin
+XiaoJie(Aaron) Li
+Ricky Lin
+pd 6
+
+Storyteller
+Our team is creating a website for telling stories.
+Every user with an account can create, contribute to and view stories. Users can only view the full story if they have contributed to it. Otherwise they will only see the most recent entry.
+ ______   ______   __   __   __       ______   _______     
+/_____/\ /_____/\ /_/\ /_/\ /_/\     /_____/\ /______/\    
+\:::_ \ \\::::_\/_\:\ \\ \ \\:\ \    \:::_ \ \\::::__\/__  
+ \:\ \ \ \\:\/___/\\:\ \\ \ \\:\ \    \:\ \ \ \\:\ /____/\ 
+  \:\ \ \ \\::___\/_\:\_/.:\ \\:\ \____\:\ \ \ \\:\\_  _\/ 
+   \:\/.:| |\:\____/\\ ..::/ / \:\/___/\\:\_\ \ \\:\_\ \ \ 
+    \____/_/ \_____\/ \___/_(   \_____\/ \_____\/ \_____\/ 
+==============================================================
+||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+
+
 
 sophiaX --2018-10-16 21:03
+-------------------------------------------------------------------------------
 Programming Sucks Response
 	    1. Review eachothers code to improve it and to gain understanding
 	    2. Ask teammates for insight first before the internet
 	    3. View existing code before writing more to keep things consistent
+===============================================================================
 
 sophiaX --2018-10-16 20:51
+-------------------------------------------------------------------------------
 Updated the design document.
 	Made it more consistent and thorough
 	added in the logout link where needed
@@ -14,3 +37,4 @@ Updated the design document.
 	renamed the edit table in the database stories
 	redid the component map to include everything
 	made the sitemap consistent with the changes
+===============================================================================
