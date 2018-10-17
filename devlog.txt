@@ -1,0 +1,10 @@
+DEVLOG
+
+sophiaX --2018-10-16 20:51
+Updated the design document.
+	Made it more consistent and thorough
+	added in the logout link where needed
+	got rid of the stories table in the database
+	renamed the edit table in the database stories
+	redid the component map to include everything
+	made the sitemap consistent with the changes
