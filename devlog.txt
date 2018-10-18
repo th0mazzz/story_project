@@ -18,6 +18,12 @@ Every user with an account can create, contribute to and view stories. Users can
 ==============================================================
 ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
 
+LiX --2018-10-18 12:22PM
+-------------------------------------------------------------------------------
+* Polished up index.html
+* Created create account page that allows user to make their account
+===============================================================================
+
 LinK --2018-10-17 5:41PM
 -------------------------------------------------------------------------------
 Added checkInfo into auth.py which checks if the inputted username/password
