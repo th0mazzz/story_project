@@ -22,6 +22,7 @@ LiX --2018-10-18 12:22PM
 -------------------------------------------------------------------------------
 * Polished up index.html
 * Created create account page that allows user to make their account
+* Added profile.html which is the user's dashboard
 ===============================================================================
 
 LinK --2018-10-17 5:41PM
