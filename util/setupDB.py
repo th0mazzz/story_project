@@ -11,7 +11,7 @@ c.execute("CREATE TABLE IF NOT EXISTS userInfo(id INTEGER PRIMARY KEY AUTOINCREM
 
 c.execute("CREATE TABLE IF NOT EXISTS stories(name TEXT, username TEXT, contrib TEXT)")
 
-auth.createAcc("abc","123")
+auth.createAcc("abc","123","123")
 
 db.commit()
 db.close()

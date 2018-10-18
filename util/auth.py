@@ -13,10 +13,11 @@ def checkInfo(user,pswd):
     else:
         return "User not found" #If the user doesn't exist in the table
 
-def createAcc(user,pswd):
+def createAcc(user,pswd,passConf):
     for i in c.execute("SELECT username FROM userInfo WHERE username = ?",(user,)):
         return "Username already exists"
     else:
+        if pswd != passConf: return "Passwords do not match"
         c.execute("INSERT INTO userInfo (username,pass) VALUES(?,?)",(user,pswd,))
         return "Account creation successful"
     db.commit()
