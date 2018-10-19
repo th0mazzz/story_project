@@ -21,6 +21,7 @@ Every user with an account can create, contribute to and view stories. Users can
 LiX --2018-10-19 12:18PM
 -------------------------------------------------------------------------------
 * updated profile.html to show user their contributions
+* created contribute.html which will be the page user creates a new story
 ===============================================================================
 
 LinK --2018-10-18 12:22PM
