@@ -8,7 +8,7 @@ app.secret_key = 'supersecure'
 
 @app.route("/") #Assign fxn to route
 def index():
-    if 'user' in session.keys():
+    if 'user' in session:
         return redirect('/profile')
     return render_template("index.html")
 
@@ -34,7 +34,15 @@ def authenticate():
 
 @app.route('/profile')
 def profile():
+    if 'user' not in session.keys():
+        redirect('/')
     return render_template('profile.html',user = session['user'], stories = story.getStories(session['user']))
+
+@app.route('/logout')
+def logout():
+    if 'user' in session:
+        session.pop('user')
+    return redirect('/')
 
 @app.route("/forbidden")
 def forbidden():

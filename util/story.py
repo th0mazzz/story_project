@@ -1,7 +1,7 @@
 from flask import Flask
 import sqlite3
 
-db = sqlite3.connect("../data/info.db",check_same_thread=False)
+db = sqlite3.connect("data/info.db",check_same_thread=False)
 
 c = db.cursor()
 
@@ -21,16 +21,17 @@ def editStory(title,username,newLine):
         db.commit()
         return "Successfully added to story"
     else:
-        return "Cannot find given story or you have already contributed" 
+        return "Cannot find given story or you have already contributed"
 
 def getStories(username):
-    c.execute("SELECT name FROM stories WHERE username = ?", (username,))           
+    c.execute("SELECT name FROM stories WHERE username = ?", (username,))
     rows = c.fetchall()
     print(rows)
+    return rows
 
 getStories("Bob")
 print(createStory("First Story", "Bob", "I like trains"))  #expect succesfully added
 print(createStory("First Story", "Joe", "I like trains too"))  #expect title already exists
-print(editStory("First Story", "Bob", "Did I mention that I like trains?")) #expect You have already added 
+print(editStory("First Story", "Bob", "Did I mention that I like trains?")) #expect You have already added
 print(editStory("First Story", "Joe", "I like dogs")) #expect successfully added
 print(editStory("Second Story", "Fred", "Is this right?")) #expect cannot find given story
