@@ -1,7 +1,7 @@
 from flask import Flask
 import sqlite3
 
-db = sqlite3.connect("data/info.db",check_same_thread = False)
+db = sqlite3.connect("../data/info.db",check_same_thread = False)
 
 c = db.cursor()
 
@@ -19,5 +19,8 @@ def createAcc(user,pswd,passConf):
     else:
         if pswd != passConf: return "Passwords do not match"
         c.execute("INSERT INTO userInfo (username,pass) VALUES(?,?)",(user,pswd,))
+        db.commit()
         return "Account creation successful"
-    db.commit()
+
+print(createAcc("abc","123","123")) #expect account creation successful
+

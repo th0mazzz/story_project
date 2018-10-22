@@ -18,12 +18,17 @@ Every user with an account can create, contribute to and view stories. Users can
 ==============================================================
 ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
 
-LinK --2018-10-21 9:20PM
+LinR --2018-10-19 8:53PM
 -------------------------------------------------------------------------------
-Simplified templates
-Session magic
-Proper displaying of profile page
-Redirects based on session
+Added method for adding onto old story in database
+Fixed small error with authentication
+Separated authentication and database creation
+===============================================================================
+
+LinR --2018-10-19 12:33PM
+-------------------------------------------------------------------------------
+Created story.py file
+Added method for creating a new story in database
 ===============================================================================
 
 LinK --2018-10-19 12:30PM
