@@ -1,7 +1,7 @@
 from flask import Flask
 import sqlite3
 
-db = sqlite3.connect("../data/info.db",check_same_thread = False)
+db = sqlite3.connect("data/info.db",check_same_thread = False)
 
 c = db.cursor()
 
