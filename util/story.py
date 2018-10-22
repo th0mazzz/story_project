@@ -16,18 +16,21 @@ def createStory(title,username,firstLine):
         return "Successfully created story"
 
 def editStory(title,username,newLine):
-    for i in c.execute('''SELECT name FROM stories WHERE name = ? AND NOT username = ? ''',(title,username,)):
-        c.execute("INSERT INTO stories (name,username,contrib) VALUES(?,?,?)",(title,username,newLine,))
-        db.commit()
-        return "Successfully added to story"
+    for i in c.execute("SELECT name FROM stories WHERE name = ? AND username = ?",(title,username,)):
+        return "You have already contributed"
     else:
-        return "Cannot find given story or you have already contributed"
+        for z in c.execute("SELECT name FROM stories WHERE name = ?", (title,)):
+            c.execute("INSERT INTO stories (name,username,contrib) VALUES(?,?,?)",(title,username,newLine,))
+            db.commit()
+            return "Successfully added to story"
+        return "Story does not exist"
+
 
 def getStories(username):
     c.execute("SELECT name FROM stories WHERE username = ?", (username,))
     rows = c.fetchall()
     print(rows)
-    return rows
+    return(rows)
 
 getStories("Bob")
 print(createStory("First Story", "Bob", "I like trains"))  #expect succesfully added
@@ -35,3 +38,4 @@ print(createStory("First Story", "Joe", "I like trains too"))  #expect title alr
 print(editStory("First Story", "Bob", "Did I mention that I like trains?")) #expect You have already added
 print(editStory("First Story", "Joe", "I like dogs")) #expect successfully added
 print(editStory("Second Story", "Fred", "Is this right?")) #expect cannot find given story
+print(createStory("Bob's Story", "abc", "wassup"))

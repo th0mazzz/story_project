@@ -1,0 +1,17 @@
+{% extends 'basetemplate.html' %}
+{% block title %}Contribute! - {% endblock %}
+{% block body %}
+<center>
+    <h1>Discover Other Stories</h1>
+    ____________________________________________________________________________
+    {% for title in stories %}
+    <h3> {{ title }}</h3>
+    <i>
+        <!-- edit this  -->
+        {{ title["content"] }}
+    </i>
+    <br>
+    ____________________________________________________________________________
+    {% endfor %}
+</center>
+{% endblock %}
