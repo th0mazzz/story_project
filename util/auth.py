@@ -21,3 +21,6 @@ def createAcc(user,pswd,passConf):
         c.execute("INSERT INTO userInfo (username,pass) VALUES(?,?)",(user,pswd,))
         db.commit()
         return "Account creation successful"
+
+print(createAcc("abc","123","123")) #expect account creation successful
+
