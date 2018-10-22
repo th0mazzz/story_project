@@ -30,7 +30,7 @@ def authenticate():
     else:
         flash(loginStatus)
         #Redirects to previous page or root if there is none
-        redirect(request.referrer or '/')
+        return redirect(request.referrer or '/')
 
 @app.route('/profile')
 def profile():
