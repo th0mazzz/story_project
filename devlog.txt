@@ -24,6 +24,7 @@ Simplified templates
 Session magic
 Proper displaying of profile page
 Redirects based on session
+===============================================================================
 
 LinR --2018-10-19 8:53PM
 -------------------------------------------------------------------------------
