@@ -2,7 +2,7 @@ import sqlite3,auth
 
 #open("../data/info.db","w").close() #Resets Database
 
-db = sqlite3.connect("data/info.db")
+db = sqlite3.connect("../data/info.db")
 
 c = db.cursor()
 
@@ -15,3 +15,4 @@ auth.createAcc("abc","123","123")
 
 db.commit()
 db.close()
+
