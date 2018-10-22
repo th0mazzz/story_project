@@ -18,6 +18,14 @@ Every user with an account can create, contribute to and view stories. Users can
 ==============================================================
 ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
 
+LiX --2018-10-19 12:18PM
+-------------------------------------------------------------------------------
+* updated base template title
+* created discover.html and edit.html to discover new stories and contribute to
+  other stories
+* changed profile.html and contribute.html arrangement
+===============================================================================
+
 LinK --2018-10-21 9:20PM
 -------------------------------------------------------------------------------
 Simplified templates
@@ -44,7 +52,6 @@ LinK --2018-10-19 12:30PM
 Added account creation
 Added account authentication
 ===============================================================================
-
 
 LiX --2018-10-19 12:18PM
 -------------------------------------------------------------------------------

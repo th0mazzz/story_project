@@ -1,0 +1,22 @@
+{% extends 'basetemplate.html' %}
+{% block title %}Edit! - {% endblock %}
+{% block body %}
+    <center>
+        <h1>Edit {{ story_title }} Below!</h1>
+        <br>
+        _______________________________________________________
+        <form action="/edit">
+            <h3>Previous contribution: </h3>
+            <p>
+                <i>{{ story }}</i>
+            </p>
+            <br>
+
+            Your Contribution:
+            <br>
+            <textarea name="story_content" rows="8" cols="80" required></textarea>
+            <br><br>
+            <input type="submit" value="Submit!">
+        </form>
+    </center>
+{% endblock %}
