@@ -1,6 +1,6 @@
 #Team SKAR - Sophia Xia, Kevin Lin, Aaron Li, Ricky Lin
 
-from util import auth
+from util import auth, story
 from flask import Flask, request, render_template, session, url_for, redirect, flash
 app = Flask(__name__) #Create instance of class Flask
 
@@ -34,7 +34,7 @@ def authenticate():
 
 @app.route('/profile')
 def profile():
-    return render_template('profile.html',user = session['user'])
+    return render_template('profile.html',user = session['user'], stories = story.getStories(session['user']))
 
 @app.route("/forbidden")
 def forbidden():
