@@ -35,6 +35,15 @@ def getStories(username):
     print(rows)
     return(rows)
 
+def getLast(storyname):
+    #Selects latest entry of the story
+    for i in c.execute("SELECT * FROM stories WHERE name = ? ORDER BY ROWID DESC LIMIT 1;",(storyname,)):
+        #Return latest entry if found
+        return i[0]
+    else:
+        #Returned if no entry found
+        return "Story does not exist"
+
 getStories("Bob")
 #diagnostic print statements
 print(createStory("First Story", "Bob", "I like trains"))  #expect succesfully added
