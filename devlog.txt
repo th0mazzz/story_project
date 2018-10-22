@@ -18,7 +18,7 @@ Every user with an account can create, contribute to and view stories. Users can
 ==============================================================
 ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
 
-LiX --2018-10-19 12:18PM
+LiX --2018-10-22 12:27PM
 -------------------------------------------------------------------------------
 * updated base template title
 * created discover.html and edit.html to discover new stories and contribute to
