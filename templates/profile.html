@@ -15,9 +15,10 @@
     <p>
         <b>Stories You've Contributed To:</b><br>
         {% for each in stories %}
-            {{each}}<br>
+            <a href = '/view?story={{each}}'>{{each}}</a>
+            <br>
         {% endfor %}
-        <br><br><br>
+        <br>
         ____________________________________________________________________________
     </p>
 </center>
