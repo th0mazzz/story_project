@@ -18,6 +18,16 @@ Every user with an account can create, contribute to and view stories. Users can
 ==============================================================
 ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
 
+sophiaX --2018-10-22 16:54
+-------------------------------------------------------------------------------
+Updated the README
+	listed the dependencies
+	added the instructions on installing them
+	added instructions on running the app
+	added a guide to navigating the website
+===============================================================================
+
+
 LinK --2018-10-22 12:20PM
 -------------------------------------------------------------------------------
 Added logout button
