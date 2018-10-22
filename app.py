@@ -44,6 +44,10 @@ def logout():
         session.pop('user')
     return redirect('/')
 
+@app.route('/edit')
+def edit():
+    return render_template('edit.html')
+
 @app.route("/forbidden")
 def forbidden():
     return "Forbidden"
