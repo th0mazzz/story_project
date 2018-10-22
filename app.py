@@ -24,7 +24,7 @@ def create():
 @app.route("/auth",methods = ['POST'])
 def authenticate():
     loginStatus = ''
-    #if the user isn't logged in, redirect them to the login page
+    #if the user got here without entering a form, redirect them to the index
     if not('user' in request.form.keys()):
         redirect('/')
     #checks the user's login info
@@ -40,15 +40,20 @@ def authenticate():
         #Redirects to previous page or root if there is none
         return redirect(request.referrer or '/')
 
-    
+
 @app.route('/profile')
 def profile():
     #if the user isn't logged in, redirect them to the login page
     if 'user' not in session.keys():
         redirect('/')
     #otherwise, load the user's profile page
-    return render_template('profile.html',user = session['user'], stories = story.getStories(session['user']))
-
+    storiesTuples = story.getStories(session['user'])
+    storiesList = []
+    for i in storiesTuples: #Nice-ify tuples
+        storiesList.append(i[0])
+    if len(storiesList) == 0:
+        storiesList = ['You have not contributed to any stories!']
+    return render_template('profile.html',user = session['user'], stories = storiesList)
 
 @app.route('/logout')
 def logout():
@@ -57,16 +62,13 @@ def logout():
         session.pop('user')
     return redirect('/')
 
-
 @app.route('/edit')
 def edit():
     return render_template('edit.html')
 
-
 @app.route("/forbidden")
 def forbidden():
     return "Forbidden"
-
 
 if __name__ == "__main__":
     app.debug = True
