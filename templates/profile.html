@@ -1,26 +1,21 @@
-<html>
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome!</title>
-</head>
-<body>
-    <center>
-        <h1>Hello {{ user }}, welcome to your dashboard</h1>
-        <p>
-            | <a href="/discover">Discover Stories</a>
-            | <a href="new_story.html">Create New Story</a>
-            |
-        </p>
-    </center>
-    <br>
+{% extends 'basetemplate.html' %}
+{% block title %}Welcome! - {% endblock %}
+{% block body %}
+<center>
+    <h1>Hello {{ user }}, welcome to your dashboard</h1>
+    <p>
+        | <a href="/discover">Discover Stories</a>
+        | <a href="new_story.html">Create New Story</a>
+        |
+    </p>
+</center>
+<br>
 
-    <center>
-        <p>
-            <b>Stories You've Contributed To:</b>
-            <br><br><br>
-            ==========================================================
-        </p>
-    </center>
-</body>
-</html>
+<center>
+    <p>
+        <b>Stories You've Contributed To:</b>
+        <br><br><br>
+        ==========================================================
+    </p>
+</center>
+{% endblock %}

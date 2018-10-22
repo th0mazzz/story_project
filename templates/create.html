@@ -1,20 +1,20 @@
-<html>
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Account Creation</title>
-</head>
-<body>
-    <center>
-        <h1>Hello there, create an account below</h1>
+{% extends 'basetemplate.html' %}
+{% block title %}Account Creation - {% endblock %}
+{% block body %}
+<center>
+    <h1>Hello there, create an account below</h1>
+    <br>
+    <form action="/auth" method="POST">
+        <p>Desired username: <input type="text" name="user" required></p>
         <br>
-        <form action="/auth" method="POST">
-            <p>Desired username: <input type="text" name="user" required></p>
-            <br>
-            <p>Desired password: <input type="password" name="pass1" required></p>
-            <p>Confirm password: <input type="password" name="pass2" required></p>
-            <input type="submit" value="Create Account">
-        </form>
-    </center>
-</body>
-</html>
+        <p>Desired password: <input type="password" name="pass1" required></p>
+        <p>Confirm password: <input type="password" name="pass2" required></p>
+        <input type="submit" value="Create Account">
+    </form>
+    {% set msgs = get_flashed_messages() %}
+    {% for each in msgs%}
+        {{each}}
+    {% endfor %}
+    {% endblock %}
+</center>
+{% endblock %}
