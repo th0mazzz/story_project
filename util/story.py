@@ -32,17 +32,28 @@ def getStories(username):
     #selects all the stories the user has contributed to
     c.execute("SELECT name FROM stories WHERE username = ?", (username,))
     rows = c.fetchall()
-    print(rows)
-    return(rows)
+    output = set()
+    for i in rows:
+        output.add(i[0])
+    print(output)
+    return(output)
 
 def getLast(storyname):
     #Selects latest entry of the story
-    for i in c.execute("SELECT * FROM stories WHERE name = ? ORDER BY ROWID DESC LIMIT 1;",(storyname,)):
+    for i in c.execute("SELECT contrib FROM stories WHERE name = ? ORDER BY ROWID DESC LIMIT 1;",(storyname,)):
         #Return latest entry if found
-        return i[0]
+        return [i[0]]
     else:
         #Returned if no entry found
-        return "Story does not exist"
+        return ["Story does not exist"]
+
+def getFull(storyname):
+    output = []
+    for i in c.execute("SELECT contrib FROM stories WHERE name = ? ORDER BY ROWID;",(storyname,)):
+        output.append(i[0]) #Adds all entries of a story in order of insertion to an output string
+    if output == []:
+        return ['Story does not exist'] #Returned if no story found
+    return output
 
 getStories("Bob")
 #diagnostic print statements

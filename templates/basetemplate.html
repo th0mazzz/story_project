@@ -13,11 +13,11 @@
   </body>
 
   <footer>
-    {% block footer %}
-      <center> &copy; SKAR </center>
-    {% endblock %}
     {% block logout %}
       <a href = '/logout'>Log Out</a>
+    {% endblock %}
+    {% block footer %}
+      <center> &copy; SKAR </center>
     {% endblock %}
   </footer>
 </html>

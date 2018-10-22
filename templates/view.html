@@ -1,0 +1,14 @@
+{% extends 'basetemplate.html' %}
+{% block title %}Viewing Story {{story}} - {% endblock %}
+{% block body %}
+<center><h1>{{story}}</h1>
+_______________________________________________________</center>
+<br>
+<center>
+  {% for each in content %}
+      {{each}}<br>
+  {% endfor %}
+</center>
+
+<a href = '/profile'>Back to Profile</a>
+{% endblock %}
