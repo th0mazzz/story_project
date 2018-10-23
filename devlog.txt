@@ -18,6 +18,15 @@ Every user with an account can create, contribute to and view stories. Users can
 ==============================================================
 ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
 
+
+sophiaX --2018-10-23 00:04
+-------------------------------------------------------------------------------
+Created function to get a list of all the story names
+Created function to get a list of all the story names the user hasn't contributed to yet
+Made the Discover route, but still working on it
+===============================================================================
+
+
 LiX --2018-10-22 8:28PM
 -------------------------------------------------------------------------------
 * changed contribute.html, profile.html, and app.py to allow users to get to the
