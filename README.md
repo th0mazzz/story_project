@@ -1,5 +1,13 @@
 # Repository For Storytelling Game/Website
 
+## Meet the Team Behind it All
+Roster:
+   * Xiaojie(Aaron) Li
+   * Sofia Xia
+   * Kevin Lin
+   * Ricky Lin
+Period 6 Software Development
+
 ## Dependencies
    Please note that this project uses Python3
 
