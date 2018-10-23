@@ -1,7 +1,7 @@
 # Repository For Storytelling Game/Website
 
 ## Meet the Team Behind it All
-Roster:
+Team SKAR Roster:
    * Xiaojie(Aaron) Li
    * Sofia Xia
    * Kevin Lin
@@ -49,6 +49,8 @@ Period 6 Software Development
    Then click the link to the website
 
 ## Navigating the Website
+
+### Team SKAR presents to you: SKARies, an online storytelling contribution website/game!
 
    Once on our story telling webstite, you wil be prompted to login.
 
