@@ -10,7 +10,9 @@ Roster:
 Period 6 Software Development
 
 ## Dependencies
-   Please note that this project uses Python3
+   Please note:
+   * this project uses Python 3
+   * installing dependencies/packages requires **sudo** access on a Linux machine
 
    You will need to create a virtual environment
    Then you will need to install Wheel and Flask.
