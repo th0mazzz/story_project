@@ -6,6 +6,7 @@ Roster:
    * Sofia Xia
    * Kevin Lin
    * Ricky Lin
+   
 Period 6 Software Development
 
 ## Dependencies
