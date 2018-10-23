@@ -63,6 +63,14 @@ def logout():
 def edit():
     return render_template('edit.html')
 
+@app.route("/contribute", methods = ["POST", "GET"])
+def contribute():
+    method = request.method
+    if method == "POST":
+        return render_template("profile.html")
+    else:
+        return render_template("contribute.html")
+        
 @app.route("/forbidden")
 def forbidden():
     return "Forbidden"

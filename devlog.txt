@@ -18,6 +18,12 @@ Every user with an account can create, contribute to and view stories. Users can
 ==============================================================
 ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
 
+LiX --2018-10-22 8:28PM
+-------------------------------------------------------------------------------
+* changed contribute.html, profile.html, and app.py to allow users to get to the
+  contribute page, and then send them to profile page
+===============================================================================
+
 linK --2018-10-22 19:16PM
 -------------------------------------------------------------------------------
 Story viewing page completed
