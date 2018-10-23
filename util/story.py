@@ -27,7 +27,15 @@ def editStory(title,username,newLine):
             return "Successfully added to story"
         return "Story does not exist"
 
-
+def getAll():
+    c.execute("SELECT name FROM stories")
+    everything = c.fetchall()
+    output = set()
+    for i in everything:
+        output.add(i[0])
+    #print(output)
+    return(output)
+    
 def getStories(username):
     #selects all the stories the user has contributed to
     c.execute("SELECT name FROM stories WHERE username = ?", (username,))
@@ -35,8 +43,13 @@ def getStories(username):
     output = set()
     for i in rows:
         output.add(i[0])
-    print(output)
+    #print(output)
     return(output)
+
+def getUndiscovered(username):
+    output = getAll() - getStories(username)
+    
+    #print(output)
 
 def getLast(storyname):
     #Selects latest entry of the story
@@ -55,8 +68,10 @@ def getFull(storyname):
         return ['Story does not exist'] #Returned if no story found
     return output
 
-getStories("Bob")
 #diagnostic print statements
+print(getAll())
+print(getStories("Bob"))
+print(getUndiscovered("Bob"))
 print(createStory("First Story", "Bob", "I like trains"))  #expect succesfully added
 print(createStory("First Story", "Joe", "I like trains too"))  #expect title already exists
 print(editStory("First Story", "Bob", "Did I mention that I like trains?")) #expect You have already added

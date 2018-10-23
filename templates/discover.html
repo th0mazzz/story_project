@@ -5,9 +5,8 @@
     <h1>Discover Other Stories</h1>
     ____________________________________________________________________________
     {% for title in stories %}
-    <h3> {{ title }}</h3>
+    <h3><a href = '/edit?story={{ title }}'> {{ title }}</a></h3>
     <i>
-        <!-- edit this  -->
         {{ title["content"] }}
     </i>
     <br>

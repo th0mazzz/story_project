@@ -59,9 +59,29 @@ def logout():
         session.pop('user')
     return redirect('/')
 
+@app.route('/discover')
+def discover():
+    if not('user' in session):
+        return redirect('/')
+    storiesList = story.getUndiscovered(session['user'])
+    if len(storiesList) == 0:
+        storiesList = ['WOW you\'ve contributed to all stories available!']
+    
+    return render_template('discover.html', stories = storiesList, )
+    
 @app.route('/edit')
 def edit():
-    return render_template('edit.html')
+    storyname = ''
+    try:
+        storyname = request.args['title']
+    except:
+        return redirect("/discover")
+    if 'user' in session:
+        #if storyname in story.getStories(session['user']):
+            storycontent = story.getLast(storyname)
+    else:
+        storycontent = story.getLast(storyname)
+    return render_template('edit.html', story_title = storyname, story = storycontent)
 
 @app.route("/contribute", methods = ["POST", "GET"])
 def contribute():
