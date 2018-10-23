@@ -63,12 +63,12 @@ def logout():
 def discover():
     if not('user' in session):
         return redirect('/')
-    storiesList = story.getUndiscovered(session['user'])
+    storiesList = story.getDiscoverDict(session['user'])
     if len(storiesList) == 0:
         storiesList = ['WOW you\'ve contributed to all stories available!']
     
-    return render_template('discover.html', stories = storiesList, )
-    
+    return render_template('discover.html', keys = storiesList.keys(), dct = storiesList)
+
 @app.route('/edit')
 def edit():
     storyname = ''

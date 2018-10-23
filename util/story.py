@@ -48,7 +48,7 @@ def getStories(username):
 
 def getUndiscovered(username):
     output = getAll() - getStories(username)
-    
+    return output;
     #print(output)
 
 def getLast(storyname):
@@ -60,6 +60,13 @@ def getLast(storyname):
         #Returned if no entry found
         return ["Story does not exist"]
 
+def getDiscoverDict(username):
+    output = dict()
+    undisList = getUndiscovered(username)
+    for i in undisList:
+        output[i] = getLast(i)[0]
+    return output
+    
 def getFull(storyname):
     output = []
     for i in c.execute("SELECT contrib FROM stories WHERE name = ? ORDER BY ROWID;",(storyname,)):

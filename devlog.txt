@@ -19,7 +19,14 @@ Every user with an account can create, contribute to and view stories. Users can
 ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
 
 
-sophiaX --2018-10-23 00:04
+
+sophiaX --2018-10-23 12:32PM
+-------------------------------------------------------------------------------
+changed military time to 12 hour format
+completed discover page
+===============================================================================
+
+sophiaX --2018-10-23 12:04PM
 -------------------------------------------------------------------------------
 Created function to get a list of all the story names
 Created function to get a list of all the story names the user hasn't contributed to yet
@@ -33,23 +40,23 @@ LiX --2018-10-22 8:28PM
   contribute page, and then send them to profile page
 ===============================================================================
 
-linK --2018-10-22 19:16PM
+linK --2018-10-22 7:16PM
 -------------------------------------------------------------------------------
 Story viewing page completed
 Story viewing page linked to story links in profile
 ===============================================================================
 
-linK --2018-10-22 18:32PM
+linK --2018-10-22 6:32PM
 -------------------------------------------------------------------------------
 Added method to retrieve the latest contribution of a given story
 ===============================================================================
 
-linK --2018-10-22 18:09PM
+linK --2018-10-22 6:09PM
 -------------------------------------------------------------------------------
 Nice-ified stories you've contributed to list
 ===============================================================================
 
-sophiaX --2018-10-22 17:48
+sophiaX --2018-10-22 5:48PM
 -------------------------------------------------------------------------------
 Commented the python files
 Made the style consistent throughout
@@ -144,7 +151,7 @@ Added a static folder for our flask app. Within it:
     will take them to the user home page.
 ===============================================================================
 
-sophiaX --2018-10-16 21:03
+sophiaX --2018-10-16 9:03PM
 -------------------------------------------------------------------------------
 Programming Sucks Response
 	    1. Review eachothers code to improve it and to gain understanding
@@ -152,7 +159,7 @@ Programming Sucks Response
 	    3. View existing code before writing more to keep things consistent
 ===============================================================================
 
-sophiaX --2018-10-16 20:51
+sophiaX --2018-10-16 8:51PM
 -------------------------------------------------------------------------------
 Updated the design document.
 	Made it more consistent and thorough
