@@ -73,7 +73,7 @@ def discover():
 def edit():
     storyname = ''
     try:
-        storyname = request.args['title']
+        storyname = request.args['story']
     except:
         return redirect("/discover")
     if 'user' in session:
@@ -82,6 +82,13 @@ def edit():
     else:
         storycontent = story.getLast(storyname)
     return render_template('edit.html', story_title = storyname, story = storycontent)
+
+@app.route('/editchanges', methods = ["POST","GET"])
+def editChanges():
+    storyname = request.args['story']
+    storycontent = request.form['story_content']
+    story.editStory(storyname, session['user'], storycontent)
+    return redirect("/profile")
 
 @app.route("/contribute", methods = ["POST", "GET"])
 def contribute():

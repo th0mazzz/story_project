@@ -5,7 +5,7 @@
         <h1>Edit {{ story_title }} Below!</h1>
         <br>
         _______________________________________________________
-        <form action="/edit">
+        <form action="/editchanges?story={{ story_title }}" method = "POST">
             <h3>Previous contribution: </h3>
             <p>
                 <i>{{ story }}</i>
@@ -18,5 +18,7 @@
             <br><br>
             <input type="submit" value="Submit!">
         </form>
+        <a href="/discover">Go back to discover</a>
     </center>
+
 {% endblock %}
