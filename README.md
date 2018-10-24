@@ -48,7 +48,7 @@ Period 6 Software Development
    ```
    Then click the link to the website
 
-## Navigating SKARies, the online storytelling website
+## Navigating SKARies, our online storytelling website
 
 
    Once on our story telling webstite, you wil be prompted to login.
