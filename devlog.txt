@@ -18,6 +18,12 @@ Every user with an account can create, contribute to and view stories. Users can
 ==============================================================
 ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
 
+LinR --2018-10-23 7:18PM
+-------------------------------------------------------------------------------
+Fixed database connection and closing error 
+Editing and creating fully functional
+===============================================================================
+
 LinK --2018-10-23 9:19PM
 -------------------------------------------------------------------------------
 Removed access to editing/creating pages to people who shouldn't be there
