@@ -21,6 +21,7 @@ Every user with an account can create, contribute to and view stories. Users can
 LiX --2018-10-24 12:01PM
 -------------------------------------------------------------------------------
 * did ANSI ASCII art for nearly all sites
+* updated some html pages with proper spacing
 ===============================================================================
 
 LinK --2018-10-24 12:00PM

@@ -1,15 +1,32 @@
 {% extends 'basetemplate.html' %}
 {% block title %}Viewing Story {{story}} - {% endblock %}
 {% block body %}
-<center><h1>{{story}}</h1>
-_______________________________________________________</center>
+<center>
+    <h2>
+        <pre>
+██╗   ██╗██╗███████╗██╗    ██╗
+██║   ██║██║██╔════╝██║    ██║
+██║   ██║██║█████╗  ██║ █╗ ██║
+╚██╗ ██╔╝██║██╔══╝  ██║███╗██║
+ ╚████╔╝ ██║███████╗╚███╔███╔╝
+ ╚═══╝  ╚═╝╚══════╝ ╚══╝╚══╝
+
+        </pre>
+    </h2>
+    <h1>
+        {{ story }}
+    </h1>
+    _______________________________________________________
+</center>
 <br>
 <center>
   {% for each in content %}
       {{each}}<br>
   {% endfor %}
-  <br>
+  _______________________________________________________
+  <br><br>
   <a href = '/profile'>Back to Profile</a>
+  <br><br>
 </center>
 
 {% endblock %}
