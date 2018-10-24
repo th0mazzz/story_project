@@ -112,6 +112,13 @@ def getAuthor(storyname):
         db.close()
         return "Story does not exist"
 
+def getSpecificAuthor(storyname, content):
+    db = sqlite3.connect("data/info.db")
+    c = db.cursor()
+    c.execute("SELECT username FROM stories WHERE name = ? AND contrib = ?", (storyname, content,))
+    contributor = c.fetchone()
+    db.close()
+    return contributor[0]
 
 #diagnostic print statements
 print(getAll())

@@ -62,12 +62,14 @@ def logout():
 
 @app.route('/discover')
 def discover():
+    def getA(storyname):
+        return story.getAuthor(storyname)
     if not('user' in session):
         return redirect('/')
     storiesList = story.getDiscoverDict(session['user'])
     if len(storiesList) == 0:
         storiesList = ['WOW you\'ve contributed to all stories available!']
-    return render_template('discover.html', keys = storiesList.keys(), dct = storiesList)
+    return render_template('discover.html', keys = storiesList.keys(), dct = storiesList, ga = getA)
 
 @app.route('/edit')
 def edit():
@@ -82,7 +84,7 @@ def edit():
         else: return redirect('/profile')
     else:
         return redirect('/')
-    return render_template('edit.html', story_title = storyname, story = storycontent)
+    return render_template('edit.html', story_title = storyname, story = storycontent, contributor = story.getAuthor(storyname))
 
 @app.route('/editchanges', methods = ["POST","GET"])
 def editChanges():
@@ -119,6 +121,8 @@ def forbidden():
 
 @app.route('/view')
 def view():
+    def getSA(storyname, content):
+        return story.getSpecificAuthor(storyname, content)
     storyname = ''
     try:
         storyname = request.args['story']
@@ -130,7 +134,7 @@ def view():
             storycontent = story.getFull(storyname)
     else:
         storycontent = story.getLast(storyname)
-    return render_template('view.html', story = storyname, content = storycontent)
+    return render_template('view.html', story = storyname, content = storycontent, gsa = getSA)
 
 if __name__ == "__main__":
     app.debug = True
