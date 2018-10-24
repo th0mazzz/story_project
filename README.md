@@ -3,7 +3,7 @@
 ## Meet the Team Behind it All
 Team SKAR Roster:
    * Xiaojie(Aaron) Li
-   * Sofia Xia
+   * Sophia Xia
    * Kevin Lin
    * Ricky Lin
    
