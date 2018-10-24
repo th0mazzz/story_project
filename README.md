@@ -48,9 +48,8 @@ Period 6 Software Development
    ```
    Then click the link to the website
 
-## Navigating the Website
+## Navigating SKARies, the online storytelling website
 
-### Team SKAR presents to you: SKARies, an online storytelling contribution website/game!
 
    Once on our story telling webstite, you wil be prompted to login.
 
