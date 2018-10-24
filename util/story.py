@@ -43,7 +43,7 @@ def getAll():
     #print(output)
     db.close()
     return(output)
-    
+
 def getStories(username):
     db = sqlite3.connect("data/info.db")
     c = db.cursor()
@@ -87,7 +87,7 @@ def getDiscoverDict(username):
         output[i] = getLast(i)[0]
     db.close()
     return output
-    
+
 def getFull(storyname):
     db = sqlite3.connect("data/info.db")
     c = db.cursor()
@@ -99,6 +99,19 @@ def getFull(storyname):
         return ['Story does not exist'] #Returned if no story found
     db.close()
     return output
+
+def getAuthor(storyname):
+    db = sqlite3.connect("data/info.db")
+    c = db.cursor()
+    for i in c.execute("SELECT username FROM stories WHERE name = ? ORDER BY ROWID LIMIT 1;",(storyname,)):
+        #Return latest entry if found
+        db.close()
+        return i[0]
+    else:
+        #Returned if no entry found
+        db.close()
+        return "Story does not exist"
+
 
 #diagnostic print statements
 print(getAll())
