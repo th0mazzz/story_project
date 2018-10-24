@@ -57,6 +57,7 @@ def logout():
     #if the user is logged in, log them out and redirect to the login page
     if 'user' in session:
         session.pop('user')
+        flash('Sucessfully Logged Out')
     return redirect('/')
 
 @app.route('/discover')
@@ -66,7 +67,6 @@ def discover():
     storiesList = story.getDiscoverDict(session['user'])
     if len(storiesList) == 0:
         storiesList = ['WOW you\'ve contributed to all stories available!']
-
     return render_template('discover.html', keys = storiesList.keys(), dct = storiesList)
 
 @app.route('/edit')
@@ -77,7 +77,7 @@ def edit():
     except:
         return redirect("/discover")
     if 'user' in session:
-        if storyname in story.getStories(session['user']):
+        if not storyname in story.getStories(session['user']):
             storycontent = story.getLast(storyname)[0]
         else: return redirect('/profile')
     else:
@@ -86,6 +86,7 @@ def edit():
 
 @app.route('/editchanges', methods = ["POST","GET"])
 def editChanges():
+    if not('story' in request.args): return redirect('/')
     if not('user' in session):
         return redirect('/')
     storyname = request.args['story']

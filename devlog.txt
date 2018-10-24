@@ -18,6 +18,12 @@ Every user with an account can create, contribute to and view stories. Users can
 ==============================================================
 ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
 
+XiaS --2018-10-24 11:55PM
+-------------------------------------------------------------------------------
+correct edit redirection
+added logout flash message
+===============================================================================
+
 LiX --2018-10-23 10:25PM
 -------------------------------------------------------------------------------
 * updated README
@@ -52,13 +58,13 @@ Completed editing stories
 Added back links and fixed centering
 ===============================================================================
 
-sophiaX --2018-10-23 12:32PM
+XiaS --2018-10-23 12:32PM
 -------------------------------------------------------------------------------
 changed military time to 12 hour format
 completed discover page
 ===============================================================================
 
-sophiaX --2018-10-23 12:04PM
+XiaS --2018-10-23 12:04PM
 -------------------------------------------------------------------------------
 Created function to get a list of all the story names
 Created function to get a list of all the story names the user hasn't contributed to yet
@@ -88,13 +94,13 @@ linK --2018-10-22 6:09PM
 Nice-ified stories you've contributed to list
 ===============================================================================
 
-sophiaX --2018-10-22 5:48PM
+XiaS --2018-10-22 5:48PM
 -------------------------------------------------------------------------------
 Commented the python files
 Made the style consistent throughout
 ===============================================================================
 
-sophiaX --2018-10-22 16:54
+XiaS --2018-10-22 16:54
 -------------------------------------------------------------------------------
 Updated the README
 	listed the dependencies
@@ -183,7 +189,7 @@ Added a static folder for our flask app. Within it:
     will take them to the user home page.
 ===============================================================================
 
-sophiaX --2018-10-16 9:03PM
+XiaS --2018-10-16 9:03PM
 -------------------------------------------------------------------------------
 Programming Sucks Response
 	    1. Review eachothers code to improve it and to gain understanding
@@ -191,7 +197,7 @@ Programming Sucks Response
 	    3. View existing code before writing more to keep things consistent
 ===============================================================================
 
-sophiaX --2018-10-16 8:51PM
+XiaS --2018-10-16 8:51PM
 -------------------------------------------------------------------------------
 Updated the design document.
 	Made it more consistent and thorough
