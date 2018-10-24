@@ -66,7 +66,7 @@ def discover():
     storiesList = story.getDiscoverDict(session['user'])
     if len(storiesList) == 0:
         storiesList = ['WOW you\'ve contributed to all stories available!']
-    
+
     return render_template('discover.html', keys = storiesList.keys(), dct = storiesList)
 
 @app.route('/edit')
@@ -77,14 +77,17 @@ def edit():
     except:
         return redirect("/discover")
     if 'user' in session:
-        #if storyname in story.getStories(session['user']):
-            storycontent = story.getLast(storyname)
+        if storyname in story.getStories(session['user']):
+            storycontent = story.getLast(storyname)[0]
+        else: return redirect('/profile')
     else:
-        storycontent = story.getLast(storyname)
+        return redirect('/')
     return render_template('edit.html', story_title = storyname, story = storycontent)
 
 @app.route('/editchanges', methods = ["POST","GET"])
 def editChanges():
+    if not('user' in session):
+        return redirect('/')
     storyname = request.args['story']
     storycontent = request.form['story_content']
     story.editStory(storyname, session['user'], storycontent)
@@ -92,14 +95,18 @@ def editChanges():
 
 @app.route("/contribute", methods = ["POST", "GET"])
 def contribute():
+    if not('user' in session):
+        return redirect('/')
     method = request.method
     if method == "POST":
         return redirect("/profile")
     else:
         return render_template("contribute.html")
-        
+
 @app.route("/contributechanges", methods = ["POST", "GET"])
 def contributechanges():
+    if not('user' in session) or not('story_title' in request.form):
+        return redirect('/')
     storyname = request.form['story_title']
     story_content = request.form['story_content']
     story.createStory(storyname, session['user'], story_content)
