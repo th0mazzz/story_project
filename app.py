@@ -94,7 +94,7 @@ def editChanges():
 def contribute():
     method = request.method
     if method == "POST":
-        return render_template("profile.html")
+        return redirect("/profile")
     else:
         return render_template("contribute.html")
         
@@ -103,7 +103,7 @@ def contributechanges():
     storyname = request.form['story_title']
     story_content = request.form['story_content']
     story.createStory(storyname, session['user'], story_content)
-    return render_template("profile.html")
+    return redirect("/profile")
 
 @app.route("/forbidden")
 def forbidden():
