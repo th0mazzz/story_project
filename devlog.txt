@@ -18,6 +18,15 @@ Every user with an account can create, contribute to and view stories. Users can
 ==============================================================
 ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
 
+LinK --2018-10-25 6:20PM
+-------------------------------------------------------------------------------
+Added a tagging system to add pictures and format text inside contributions
+  [i] toggles italics
+  [b] toggles bolding
+  [u] toggles underlining
+  [img <img url>] inserts an image
+===============================================================================
+
 LiX --2018-10-25 12:33PM
 -------------------------------------------------------------------------------
 * makefile for easily running python code for deleting/creating a database

@@ -10,7 +10,7 @@ def createStory(title,username,firstLine):
         return "Title already exists"
     else:
         #inserts given information into the table
-        c.execute("INSERT INTO stories (name,username,contrib) VALUES(?,?,?)",(title,username,firstLine,))
+        c.execute("INSERT INTO stories (name,username,contrib) VALUES(?,?,?)",(title,username,contentParser(firstLine),))
         db.commit()
         db.close()
         return "Successfully created story"
@@ -25,12 +25,81 @@ def editStory(title,username,newLine):
     else:
         #inserts given information into the table
         for z in c.execute("SELECT name FROM stories WHERE name = ?", (title,)):
-            c.execute("INSERT INTO stories (name,username,contrib) VALUES(?,?,?)",(title,username,newLine,))
+            c.execute("INSERT INTO stories (name,username,contrib) VALUES(?,?,?)",(title,username,contentParser(newLine),))
             db.commit()
             db.close()
             return "Successfully added to story"
         db.close()
         return "Story does not exist"
+
+def contentParser(content):
+    output = ""
+    i = 0
+    italics = False
+    bold = False
+    underline = False
+    while i < len(content):
+        if content[i] != '<':
+            if content[i:i+5] == '[img ':
+                bracketcount = 0
+                subt = ''
+                success = False
+                for j in range(i+5,len(content)):
+                    if content[j] == '[':
+                        bracketcount += 1
+                    elif content[j] == ']':
+                        bracketcount -= 1
+                        if bracketcount < 0:
+                            success = True
+                            break
+                    else:
+                        subt+= content[j]
+                if success:
+                    output += '<img src = "' + subt + '">'
+                    i += len(subt) + 6
+                    continue
+                output += '[img '
+                i += 5
+                continue
+            elif content[i:i+3] == '[i]':
+                if italics:
+                    output += '</i>'
+                    italics = False
+                else:
+                    output += '<i>'
+                    italics = True
+                i += 3
+                continue
+            elif content[i:i+3] == '[b]':
+                if bold:
+                    output += '</b>'
+                    bold = False
+                else:
+                    output += '<b>'
+                    bold = True
+                i += 3
+                continue
+            elif content[i:i+3] == '[u]':
+                if underline:
+                    output += '</u>'
+                    underline = False
+                else:
+                    output += '<u>'
+                    underline = True
+                i += 3
+                continue
+            elif content[i:i+1] == '\n':
+                output += '<br>'
+            output += content[i]
+        else: output += '&lt'
+        i += 1
+    if italics:
+        output += '</i>'
+    if bold:
+        output += '</b>'
+    if underline:
+        output += '</u>'
+    return output
 
 def getAll():
     db = sqlite3.connect("data/info.db")
@@ -94,7 +163,7 @@ def getFull(storyname):
     output = []
     for i in c.execute("SELECT contrib FROM stories WHERE name = ? ORDER BY ROWID;",(storyname,)):
         output.append(i[0]) #Adds all entries of a story in order of insertion to an output string
-    if output == []:
+    if len(output) == 0:
         db.close()
         return ['Story does not exist'] #Returned if no story found
     db.close()

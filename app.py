@@ -19,6 +19,8 @@ def index():
 
 @app.route("/create")
 def create():
+    if 'user' in session:
+        return redirect('/profile')
     return render_template("create.html")
 
 
