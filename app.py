@@ -64,12 +64,14 @@ def logout():
 def discover():
     def getA(storyname):
         return story.getAuthor(storyname)
+    def getSA(storyname, content):
+        return story.getSpecificAuthor(storyname, content)
     if not('user' in session):
         return redirect('/')
     storiesList = story.getDiscoverDict(session['user'])
     if len(storiesList) == 0:
         storiesList = ['WOW you\'ve contributed to all stories available!']
-    return render_template('discover.html', keys = storiesList.keys(), dct = storiesList, ga = getA)
+    return render_template('discover.html', keys = storiesList.keys(), dct = storiesList, ga = getA, gsa = getSA)
 
 @app.route('/edit')
 def edit():

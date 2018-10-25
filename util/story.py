@@ -100,6 +100,7 @@ def getFull(storyname):
     db.close()
     return output
 
+#gets the creator of the story
 def getAuthor(storyname):
     db = sqlite3.connect("data/info.db")
     c = db.cursor()
