@@ -2,10 +2,11 @@
 
 from util import auth, story
 from flask import Flask, request, render_template, session, url_for, redirect, flash
+import os
+
 app = Flask(__name__) #Create instance of class Flask
 
-app.secret_key = 'supersecure'
-
+app.secret_key = os.urandom(32)
 
 @app.route("/") #Assign fxn to route
 def index():
