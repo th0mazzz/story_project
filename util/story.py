@@ -40,8 +40,9 @@ def contentParser(content):
     underline = False
     while i < len(content):
         if content[i] != '<':
+            #If a start of an image tag is recognized
             if content[i:i+5] == '[img ':
-                bracketcount = 0
+                bracketcount = 0 #Keeps track of bracket balancing
                 subt = ''
                 success = False
                 for j in range(i+5,len(content)):
@@ -49,19 +50,21 @@ def contentParser(content):
                         bracketcount += 1
                     elif content[j] == ']':
                         bracketcount -= 1
-                        if bracketcount < 0:
+                        if bracketcount < 0: #Ends the tag if brackets are balanced
                             success = True
                             break
                     else:
-                        subt+= content[j]
+                        subt+= content[j] #Inserts characters in a link
                 if success:
-                    output += '<img src = "' + subt + '">'
-                    i += len(subt) + 6
+                    output += '<img src = "' + subt + '">' #Converts tag with link into HTML
+                    i += len(subt) + 6 #Moves i to account for added characters
                     continue
+                #If not successful (no ending brackets) add [img as part of the output
                 output += '[img '
                 i += 5
                 continue
-            elif content[i:i+3] == '[i]':
+            elif content[i:i+3] == '[i]': #If an italics tag is recognized
+                #Check if italics are on, either put an ending or beginning of italics, and toggle the boolean
                 if italics:
                     output += '</i>'
                     italics = False
@@ -70,7 +73,8 @@ def contentParser(content):
                     italics = True
                 i += 3
                 continue
-            elif content[i:i+3] == '[b]':
+            elif content[i:i+3] == '[b]': #If an bold tag is recognized
+                #Check if bolding is on, either put an ending or beginning of bolding, and toggle the boolean
                 if bold:
                     output += '</b>'
                     bold = False
@@ -79,7 +83,8 @@ def contentParser(content):
                     bold = True
                 i += 3
                 continue
-            elif content[i:i+3] == '[u]':
+            elif content[i:i+3] == '[u]': #If an underline tag is recognized
+                #Check if underlining is on, either put an ending or beginning of underlining, and toggle the boolean
                 if underline:
                     output += '</u>'
                     underline = False
@@ -88,18 +93,19 @@ def contentParser(content):
                     underline = True
                 i += 3
                 continue
-            elif content[i:i+1] == '\n':
+            elif content[i:i+1] == '\n': #Adds a <br> whenever there's a new line since HTML doesn't recognize that
                 output += '<br>'
             output += content[i]
-        else: output += '&lt'
+        else: output += '&lt' #If someone's trying to be sneaky and insert html, replace < with &lt
         i += 1
+    #Puts ending tags for formatting so the contribution doesn't affect the text on the page after it
     if italics:
         output += '</i>'
     if bold:
         output += '</b>'
     if underline:
         output += '</u>'
-    return output
+    return output #Returns edited contribution
 
 def getAll():
     db = sqlite3.connect("data/info.db")
