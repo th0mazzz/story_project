@@ -2,9 +2,9 @@
 
 ## Meet the Team Behind it All
 Team SKAR Roster:
-   * Xiaojie(Aaron) Li
    * Sophia Xia
    * Kevin Lin
+   * Xiaojie(Aaron) Li
    * Ricky Lin
    
 Period 6 Software Development
@@ -51,7 +51,7 @@ Period 6 Software Development
 ## Navigating SKARies, our online storytelling website
 
 
-   Once on our story telling webstite, you wil be prompted to login.
+   Once on our story telling website, you will be prompted to login.
 
    If you do not have an account, create one by following the link and entering your desired username and password.
 
