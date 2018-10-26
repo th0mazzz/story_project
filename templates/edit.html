@@ -23,12 +23,15 @@
         <form action="/editchanges?story={{ story_title }}" method = "POST">
             <h3>Previous contribution: </h3>
             <p>
+	      <!--'|safe' enables html tags-->
                 {{ story|safe }} <b>- {{ contributor }}</b>
             </p>
             <br>
 
             Your Contribution:
             <br>
+	    <!--The size of the text area can be changed
+	      by dragging the lower right corner in the website-->
             <textarea name="story_content" rows="8" cols="80" required></textarea>
             <br><br>
             <input type="submit" value="Submit!">

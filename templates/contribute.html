@@ -16,10 +16,13 @@
         <br>
         ____________________________________________________________________________
         <form action="/contributechanges" method = "POST">
+	  <!--POST prevents the query string from showing up in the URL -->
             <p>Story title: <input type="text" name="story_title" required></p>
             <br>
             Story Content
             <br>
+	  <!--The size of the text area can be changed
+	      by dragging the lower right corner in the website-->
             <textarea name="story_content" rows="8" cols="80" required></textarea>
             <br><br>
             <input type="submit" value="Submit!">
