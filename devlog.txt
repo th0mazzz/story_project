@@ -20,6 +20,12 @@ Every user with an account can create, contribute to and view stories. Users can
 
 XiaS --2018-10-25 8:17PM
 -------------------------------------------------------------------------------
+Updated util package with comments for all functions.
+===============================================================================
+
+
+XiaS --2018-10-25 8:17PM
+-------------------------------------------------------------------------------
 redirected users back to login screen from view page if not logged in.
 Updated app.py with comments for all but one function.
 ===============================================================================

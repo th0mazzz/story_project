@@ -2,6 +2,10 @@ from flask import Flask
 import sqlite3
 
 def checkInfo(user,pswd):
+    '''This function takes in two parameters (username, password) and checks the database for the params.
+       If they are found, the function returns "Login Successful".
+       If the username is found and the associated password doesn't match, it returns "Incorrect Password".
+       If the username isn't found, it returns "User not found".'''
     db = sqlite3.connect("data/info.db")
     c = db.cursor()
     #Looks for the password of the inputted user
@@ -18,6 +22,10 @@ def checkInfo(user,pswd):
         return "User not found"
 
 def createAcc(user,pswd,passConf):
+    '''This function takes in three parameters (username, password, password confirmation).
+       If the username is found in the database, it returns "Username already exists.
+       If the password and password confirmation aren't the same, it returns "Passwords do not match".
+       Otherwise, it will add the username and password to the database and return "Account Creation Successful."'''
     db = sqlite3.connect("data/info.db")
     c = db.cursor()
     #checks if the username already exists
