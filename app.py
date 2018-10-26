@@ -144,28 +144,18 @@ def editChanges():
 @app.route("/contribute", methods = ["POST", "GET"])
 def contribute():
     '''This function redirects the user to the login page if they aren't logged in.
-       @Ricky PLEASE COMMENT THIS
+       otherwise, it checks if you already submitted a contribution and posted something. If you posted, it will add the change to the database and redirect you to your profile. Else, it will return the same page
     '''
     if not('user' in session):
         return redirect('/')
     method = request.method
     if method == "POST":
+        storyname = request.form['story_title']
+        story_content = request.form['story_content']
+        story.createStory(storyname, session['user'], story_content)
         return redirect("/profile")
     else:
         return render_template("contribute.html")
-
-@app.route("/contributechanges", methods = ["POST", "GET"])
-def contributechanges():
-    '''This function redirects the user to the login page if they aren't logged in
-       or if a story name wasn't inputted.
-       Otherwise, it will add the story content to the database.
-       Then it will redirect the user to their profile page.'''
-    if not('user' in session) or not('story_title' in request.form):
-        return redirect('/')
-    storyname = request.form['story_title']
-    story_content = request.form['story_content']
-    story.createStory(storyname, session['user'], story_content)
-    return redirect("/profile")
 
 @app.route("/forbidden")
 def forbidden():
