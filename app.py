@@ -29,7 +29,7 @@ def create():
        where they will be prompted to enter their desired username and password
        as well as confirm their password.
        Once the user sumbits their information, they will be redirected to their profile page.
-       Users can also click the logout link which brings them back to the login page.'''
+       Users can also click the login link which brings them back to the login page.'''
     if 'user' in session:
         return redirect('/profile')
     return render_template("create.html")
@@ -101,6 +101,9 @@ def discover():
     def getSA(storyname, content):
         return story.getSpecificAuthor(storyname, content)
     storiesList = story.getDiscoverDict(session['user'])
+    if len(story.getAll()) == 0:
+        flash('There are no stories, please contribute')
+        return redirect('/contribute')
     if len(storiesList) == 0:
         storiesList = ['WOW you\'ve contributed to all stories available!']
     return render_template('discover.html', keys = storiesList.keys(), dct = storiesList, ga = getA, gsa = getSA)

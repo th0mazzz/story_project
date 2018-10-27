@@ -20,6 +20,13 @@ Every user with an account can create, contribute to and view stories. Users can
 
 XiaS --2018-10-27 2:09PM
 -------------------------------------------------------------------------------
+discover redirects to contribute when there are no stories in the database
+changed logout link on the create account page to a login link
+added a few stories to the database
+===============================================================================
+
+XiaS --2018-10-27 2:09PM
+-------------------------------------------------------------------------------
 Updated README with instructions on how to use formatting tags
 ===============================================================================
 

@@ -27,6 +27,10 @@
             <br><br>
             <input type="submit" value="Submit!">
         </form>
+	{% set msgs = get_flashed_messages() %}
+	{% for each in msgs%}
+	{{each}}
+	{% endfor %}
         <br>
         <a href="/profile">Go back to profile</a>
         <br><br>
