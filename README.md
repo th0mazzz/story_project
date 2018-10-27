@@ -62,3 +62,23 @@ Period 6 Software Development
    Note that you will only be able to see the last update, if you haven't contributed to the story before. Once you contribute, you will be able to read the full story.
 
    The link to the discover page, helps you find new stories to read.
+
+
+## How to Format Your Story
+   When creating or adding to a new story, you are able to italicize[i], bold[b], and underline[u] the text with tags:
+   '''
+   [i]sample text[i]
+   [b]sample text[b]
+   [u]sample text[u]
+   '''
+   If you don't close the tag, it will apply the effect to everything after the open tag.
+
+   In addition you are also able to insert pictures into your contribution.
+   '''
+   [img <LINK TO IMAGE>]
+   '''
+   You can look up an image, right click and click copy image location. Paste that into the denoted field, keeping in mind the space between img and the link.
+
+   Enjoy this feature that took our devo Kevin brought into existence for you. Thank him with a cookie.
+   
+   And for all you people trying to use html tags, too bad, they won't work.
