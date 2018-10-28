@@ -46,7 +46,7 @@ def authenticate():
     loginStatus = ''
     #if the user got here without entering a form, redirect them to the index
     if not('user' in request.form.keys()):
-        redirect('/')
+        return redirect('/')
     #checks the user's login info
     if "pass2" in request.form.keys():
         loginStatus =  auth.createAcc(request.form['user'],request.form['pass1'],request.form['pass2'])
@@ -105,7 +105,9 @@ def discover():
         flash('There are no stories, please contribute')
         return redirect('/contribute')
     if len(storiesList) == 0:
-        storiesList = ['WOW you\'ve contributed to all stories available!']
+        storiesList = dict()
+        storiesList['WOW you\'ve contributed to all stories available!'] = ''
+        #return render_template('discover.html', keys = storiesList.keys(), dct = storiesList, ga = getA)
     return render_template('discover.html', keys = storiesList.keys(), dct = storiesList, ga = getA, gsa = getSA)
 
 @app.route('/edit')
@@ -127,6 +129,8 @@ def edit():
         else: return redirect('/profile')
     else:
         return redirect('/')
+    if not storyname in story.getAll():
+        return redirect("/discover")
     return render_template('edit.html', story_title = storyname, story = storycontent, contributor = story.getAuthor(storyname))
 
 @app.route('/editchanges', methods = ["POST","GET"])
@@ -172,6 +176,7 @@ def view():
        If it succeeds, it will check to see if the user has contributed to it before.
        If the user has, it will show the full story and if not it will only show the last submission.
        It will also display the names of all the contributors.
+       If the storyname isn't in the database, it redirects the user to their profile page
        User can go to their profile or logout with the links at the bottom of the page.'''
     if not('user' in session):
         return redirect('/')
@@ -188,6 +193,8 @@ def view():
             storycontent = story.getFull(storyname)
     else:
         storycontent = story.getLast(storyname)
+    if not storyname in story.getAll():
+        return redirect("profile")
     return render_template('view.html', story = storyname, content = storycontent, gsa = getSA)
 
 if __name__ == "__main__":

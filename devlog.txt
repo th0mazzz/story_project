@@ -18,6 +18,12 @@ Every user with an account can create, contribute to and view stories. Users can
 ==============================================================
 ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
 
+XiaS --2018-10-27 10:02PM
+-------------------------------------------------------------------------------
+redirect to discover if story isn't found in edit
+redirect to profile if story isn't found in view
+===============================================================================
+
 XiaS --2018-10-27 2:09PM
 -------------------------------------------------------------------------------
 discover redirects to contribute when there are no stories in the database

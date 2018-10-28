@@ -227,7 +227,8 @@ def getAuthor(storyname):
     else:
         #Returned if no entry found
         db.close()
-        return "Story does not exist"
+        return "No author"
+        #return "Story does not exist"
 
 def getSpecificAuthor(storyname, content):
     '''This function takes in two parameters(storyname, content).
@@ -238,6 +239,7 @@ def getSpecificAuthor(storyname, content):
     c.execute("SELECT username FROM stories WHERE name = ? AND contrib = ?", (storyname, content,))
     contributor = c.fetchone()
     db.close()
+    if contributor == None: return ''
     return contributor[0]
 
 #diagnostic print statements
