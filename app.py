@@ -35,7 +35,7 @@ def create():
     return render_template("create.html")
 
 
-@app.route("/auth",methods = ['POST'])
+@app.route("/auth",methods = ['POST','GET'])
 def authenticate():
     '''This function redirects users who got to the the authenticate page without entering a form to the login page.
        If they did enter a form, it will check if the username and password are in the database.
@@ -45,7 +45,7 @@ def authenticate():
        If they were both incorrect, the message will only indicate an issue with the username.'''
     loginStatus = ''
     #if the user got here without entering a form, redirect them to the index
-    if not('user' in request.form.keys()):
+    if request.method == 'GET' or not('user' in request.form.keys()):
         return redirect('/')
     #checks the user's login info
     if "pass2" in request.form.keys():
