@@ -188,9 +188,8 @@ def view():
     except:
         return redirect("/profile")
     storycontent = ''
-    if 'user' in session:
-        if storyname in story.getStories(session['user']):
-            storycontent = story.getFull(storyname)
+    if storyname in story.getStories(session['user']):
+        storycontent = story.getFull(storyname)
     else:
         storycontent = story.getLast(storyname)
     if not storyname in story.getAll():
