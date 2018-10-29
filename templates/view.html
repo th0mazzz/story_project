@@ -22,7 +22,7 @@
 <center>
   {% for each in content %}
   <!--'|safe' enables html tags-->
-  {{each|safe}} <b>- {{gsa(story, each)}}</b><br><br>
+  {{each|safe}} <b>- {{prev(story, each)}}</b><br><br>
   {% endfor %}
   _______________________________________________________
   <br><br>
