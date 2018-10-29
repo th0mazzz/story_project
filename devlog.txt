@@ -18,272 +18,7 @@ Every user with an account can create, contribute to and view stories. Users can
 ==============================================================
 ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
 
-LinK --2018-10-28 5:45PM
--------------------------------------------------------------------------------
-Fixed view problem if user hasn't contributed yet
-===============================================================================
-
-LinK --2018-10-27 10:06PM
--------------------------------------------------------------------------------
-Redirect to index if trying to get to auth by typing it in the URL
-===============================================================================
-
-XiaS --2018-10-27 10:02PM
--------------------------------------------------------------------------------
-redirect to discover if story isn't found in edit
-redirect to profile if story isn't found in view
-===============================================================================
-
-XiaS --2018-10-27 2:09PM
--------------------------------------------------------------------------------
-discover redirects to contribute when there are no stories in the database
-changed logout link on the create account page to a login link
-added a few stories to the database
-===============================================================================
-
-XiaS --2018-10-27 2:09PM
--------------------------------------------------------------------------------
-Updated README with instructions on how to use formatting tags
-===============================================================================
-
-LiX --2018-10-26 9:30AM
--------------------------------------------------------------------------------
-* updated spacing
-===============================================================================
-
-XiaS --2018-10-25 10:17PM
--------------------------------------------------------------------------------
-Updated html files with comments where necessary.
-===============================================================================
-
-XiaS --2018-10-25 8:17PM
--------------------------------------------------------------------------------
-Updated util package with comments for all functions.
-===============================================================================
-
-
-XiaS --2018-10-25 8:17PM
--------------------------------------------------------------------------------
-redirected users back to login screen from view page if not logged in.
-Updated app.py with comments for all but one function.
-===============================================================================
-
-LinK --2018-10-25 6:20PM
--------------------------------------------------------------------------------
-Added a tagging system to add pictures and format text inside contributions
-  [i] toggles italics
-  [b] toggles bolding
-  [u] toggles underlining
-  [img <img url>] inserts an image
-===============================================================================
-
-LiX --2018-10-25 12:33PM
--------------------------------------------------------------------------------
-* makefile for easily running python code for deleting/creating a database
-===============================================================================
-
-XiaS --2018-10-24 6:07PM
--------------------------------------------------------------------------------
-updated formatting in the html files
-added original and lastest contributor
-===============================================================================
-
-XiaS --2018-10-24 6:07PM
--------------------------------------------------------------------------------
-the discover, edit and view page now shows the contributors
-===============================================================================
-
-LiX --2018-10-24 12:01PM
--------------------------------------------------------------------------------
-* did ANSI ASCII art for nearly all sites
-* updated some html pages with proper spacing
-===============================================================================
-
-LinK --2018-10-24 12:00PM
--------------------------------------------------------------------------------
-Added function to get creator of a story
-===============================================================================
-
-XiaS --2018-10-24 11:55PM
--------------------------------------------------------------------------------
-correct edit redirection
-added logout flash message
-===============================================================================
-
-LiX --2018-10-23 10:25PM
--------------------------------------------------------------------------------
-* updated README
-* added some ASCII art to login page, WITHOUT CSS
-===============================================================================
-
-LinK --2018-10-23 9:55PM
--------------------------------------------------------------------------------
-Removed access to editing/creating pages to people who shouldn't be there
-===============================================================================
-
-LinR --2018-10-23 9:46PM
--------------------------------------------------------------------------------
-Fixed database connection and closing error
-Editing and creating fully functional
-===============================================================================
-
-LinK --2018-10-23 9:19PM
--------------------------------------------------------------------------------
-Fixed stories not showing up in profile after an story edit or creation
-===============================================================================
-
-LinR --2018-10-23 7:18PM
--------------------------------------------------------------------------------
-Completed creating stories
-Locked Database?
-===============================================================================
-
-LinR --2018-10-23 7:18PM
--------------------------------------------------------------------------------
-Completed editing stories
-Added back links and fixed centering
-===============================================================================
-
-XiaS --2018-10-23 12:32PM
--------------------------------------------------------------------------------
-changed military time to 12 hour format
-completed discover page
-===============================================================================
-
-XiaS --2018-10-23 12:04PM
--------------------------------------------------------------------------------
-Created function to get a list of all the story names
-Created function to get a list of all the story names the user hasn't contributed to yet
-Made the Discover route, but still working on it
-===============================================================================
-
-
-LiX --2018-10-22 8:28PM
--------------------------------------------------------------------------------
-* changed contribute.html, profile.html, and app.py to allow users to get to the
-  contribute page, and then send them to profile page
-===============================================================================
-
-linK --2018-10-22 7:16PM
--------------------------------------------------------------------------------
-Story viewing page completed
-Story viewing page linked to story links in profile
-===============================================================================
-
-linK --2018-10-22 6:32PM
--------------------------------------------------------------------------------
-Added method to retrieve the latest contribution of a given story
-===============================================================================
-
-linK --2018-10-22 6:09PM
--------------------------------------------------------------------------------
-Nice-ified stories you've contributed to list
-===============================================================================
-
-XiaS --2018-10-22 5:48PM
--------------------------------------------------------------------------------
-Commented the python files
-Made the style consistent throughout
-===============================================================================
-
-XiaS --2018-10-22 16:54
--------------------------------------------------------------------------------
-Updated the README
-	listed the dependencies
-	added the instructions on installing them
-	added instructions on running the app
-	added a guide to navigating the website
-===============================================================================
-
-LinK --2018-10-22 12:20PM
--------------------------------------------------------------------------------
-Added logout button
-===============================================================================
-
-LiX --2018-10-22 12:27PM
--------------------------------------------------------------------------------
-* updated base template title
-* created discover.html and edit.html to discover new stories and contribute to
-  other stories
-* changed profile.html and contribute.html arrangement
-===============================================================================
-
-LinK --2018-10-21 9:20PM
--------------------------------------------------------------------------------
-Simplified templates
-Session magic
-Proper displaying of profile page
-Redirects based on session
-===============================================================================
-
-LinR --2018-10-19 8:53PM
--------------------------------------------------------------------------------
-Added method for adding onto old story in database
-Fixed small error with authentication
-Separated authentication and database creation
-===============================================================================
-
-LinR --2018-10-19 12:33PM
--------------------------------------------------------------------------------
-Created story.py file
-Added method for creating a new story in database
-===============================================================================
-
-LinK --2018-10-19 12:30PM
--------------------------------------------------------------------------------
-Added account creation
-Added account authentication
-===============================================================================
-
-LiX --2018-10-19 12:18PM
--------------------------------------------------------------------------------
-* updated profile.html to show user their contributions
-* created contribute.html which will be the page user creates a new story
-===============================================================================
-
-LinK --2018-10-18 12:22PM
--------------------------------------------------------------------------------
-Added method to create accounts
-Added dummy account in setupDB
-Packaged util
-===============================================================================
-
-LiX --2018-10-18 12:22PM
--------------------------------------------------------------------------------
-* Polished up index.html
-* Created create account page that allows user to make their account
-* Added profile.html which is the user's dashboard
-===============================================================================
-
-LinK --2018-10-17 5:41PM
--------------------------------------------------------------------------------
-Added checkInfo into auth.py which checks if the inputted username/password
-  match in the userInfo table
-===============================================================================
-
-LinK --2018-10-17 12:29PM
--------------------------------------------------------------------------------
-Added templates for app.py and auth.py
-Created setupDB.py to set up the database and tables
-===============================================================================
-
-LiX --2018-10-17 12:03PM
--------------------------------------------------------------------------------
-Added a static folder for our flask app. Within it:
-    added a index.html file as the home page featuring a log in screen and a link
-    to create an account if the user does not have an account. The submit button
-    will take them to the user home page.
-===============================================================================
-
-XiaS --2018-10-16 9:03PM
--------------------------------------------------------------------------------
-Programming Sucks Response
-	    1. Review eachothers code to improve it and to gain understanding
-	    2. Ask teammates for insight first before the internet
-	    3. View existing code before writing more to keep things consistent
-===============================================================================
-
-XiaS --2018-10-16 8:51PM
+sophiaX --2018-10-16 8:51PM
 -------------------------------------------------------------------------------
 Updated the design document.
 	Made it more consistent and thorough
@@ -292,4 +27,272 @@ Updated the design document.
 	renamed the edit table in the database stories
 	redid the component map to include everything
 	made the sitemap consistent with the changes
+===============================================================================
+
+sophiaX --2018-10-16 9:03PM
+-------------------------------------------------------------------------------
+Programming Sucks Response
+	    1. Review eachothers code to improve it and to gain understanding
+	    2. Ask teammates for insight first before the internet
+	    3. View existing code before writing more to keep things consistent
+===============================================================================
+
+xiaojieL --2018-10-17 12:03PM
+-------------------------------------------------------------------------------
+Added a static folder for our flask app. Within it:
+    added a index.html file as the home page featuring a log in screen and a link
+    to create an account if the user does not have an account. The submit button
+    will take them to the user home page.
+===============================================================================
+
+kevinL --2018-10-17 12:29PM
+-------------------------------------------------------------------------------
+Added templates for app.py and auth.py
+Created setupDB.py to set up the database and tables
+===============================================================================
+
+kevinL --2018-10-17 5:41PM
+-------------------------------------------------------------------------------
+Added checkInfo into auth.py which checks if the inputted username/password
+  match in the userInfo table
+===============================================================================
+
+xiaojieL --2018-10-18 12:22PM
+-------------------------------------------------------------------------------
+* Polished up index.html
+* Created create account page that allows user to make their account
+* Added profile.html which is the user's dashboard
+===============================================================================
+
+kevinL --2018-10-18 12:22PM
+-------------------------------------------------------------------------------
+Added method to create accounts
+Added dummy account in setupDB
+Packaged util
+===============================================================================
+
+xiaojieL --2018-10-19 12:18PM
+-------------------------------------------------------------------------------
+* updated profile.html to show user their contributions
+* created contribute.html which will be the page user creates a new story
+===============================================================================
+
+kevinL --2018-10-19 12:30PM
+-------------------------------------------------------------------------------
+Added account creation
+Added account authentication
+===============================================================================
+
+rickyL --2018-10-19 12:33PM
+-------------------------------------------------------------------------------
+Created story.py file
+Added method for creating a new story in database
+===============================================================================
+
+rickyL --2018-10-19 8:53PM
+-------------------------------------------------------------------------------
+Added method for adding onto old story in database
+Fixed small error with authentication
+Separated authentication and database creation
+===============================================================================
+
+kevinL --2018-10-21 9:20PM
+-------------------------------------------------------------------------------
+Simplified templates
+Session magic
+Proper displaying of profile page
+Redirects based on session
+===============================================================================
+
+xiaojieL --2018-10-22 12:27PM
+-------------------------------------------------------------------------------
+* updated base template title
+* created discover.html and edit.html to discover new stories and contribute to
+  other stories
+* changed profile.html and contribute.html arrangement
+===============================================================================
+
+kevinL --2018-10-22 12:20PM
+-------------------------------------------------------------------------------
+Added logout button
+===============================================================================
+
+sophiaX --2018-10-22 16:54
+-------------------------------------------------------------------------------
+Updated the README
+	listed the dependencies
+	added the instructions on installing them
+	added instructions on running the app
+	added a guide to navigating the website
+===============================================================================
+
+sophiaX --2018-10-22 5:48PM
+-------------------------------------------------------------------------------
+Commented the python files
+Made the style consistent throughout
+===============================================================================
+
+linK --2018-10-22 6:09PM
+-------------------------------------------------------------------------------
+Nice-ified stories you've contributed to list
+===============================================================================
+
+linK --2018-10-22 6:32PM
+-------------------------------------------------------------------------------
+Added method to retrieve the latest contribution of a given story
+===============================================================================
+
+linK --2018-10-22 7:16PM
+-------------------------------------------------------------------------------
+Story viewing page completed
+Story viewing page linked to story links in profile
+===============================================================================
+
+xiaojieL --2018-10-22 8:28PM
+-------------------------------------------------------------------------------
+* changed contribute.html, profile.html, and app.py to allow users to get to the
+  contribute page, and then send them to profile page
+===============================================================================
+
+sophiaX --2018-10-23 12:04PM
+-------------------------------------------------------------------------------
+Created function to get a list of all the story names
+Created function to get a list of all the story names the user hasn't contributed to yet
+Made the Discover route, but still working on it
+===============================================================================
+
+sophiaX --2018-10-23 12:32PM
+-------------------------------------------------------------------------------
+changed military time to 12 hour format
+completed discover page
+===============================================================================
+
+rickyL --2018-10-23 7:18PM
+-------------------------------------------------------------------------------
+Completed editing stories
+Added back links and fixed centering
+===============================================================================
+
+rickyL --2018-10-23 7:18PM
+-------------------------------------------------------------------------------
+Completed creating stories
+Locked Database?
+===============================================================================
+
+kevinL --2018-10-23 9:19PM
+-------------------------------------------------------------------------------
+Fixed stories not showing up in profile after an story edit or creation
+===============================================================================
+
+rickyL --2018-10-23 9:46PM
+-------------------------------------------------------------------------------
+Fixed database connection and closing error
+Editing and creating fully functional
+===============================================================================
+
+kevinL --2018-10-23 9:55PM
+-------------------------------------------------------------------------------
+Removed access to editing/creating pages to people who shouldn't be there
+===============================================================================
+
+xiaojieL --2018-10-23 10:25PM
+-------------------------------------------------------------------------------
+* updated README
+* added some ASCII art to login page, WITHOUT CSS
+===============================================================================
+
+sophiaX --2018-10-24 11:55PM
+-------------------------------------------------------------------------------
+correct edit redirection
+added logout flash message
+===============================================================================
+
+kevinL --2018-10-24 12:00PM
+-------------------------------------------------------------------------------
+Added function to get creator of a story
+===============================================================================
+
+xiaojieL --2018-10-24 12:01PM
+-------------------------------------------------------------------------------
+* did ANSI ASCII art for nearly all sites
+* updated some html pages with proper spacing
+===============================================================================
+
+sophiaX --2018-10-24 6:07PM
+-------------------------------------------------------------------------------
+the discover, edit and view page now shows the contributors
+===============================================================================
+
+sophiaX --2018-10-24 6:07PM
+-------------------------------------------------------------------------------
+updated formatting in the html files
+added original and lastest contributor
+===============================================================================
+
+xiaojieL --2018-10-25 12:33PM
+-------------------------------------------------------------------------------
+* makefile for easily running python code for deleting/creating a database
+===============================================================================
+
+kevinL --2018-10-25 6:20PM
+-------------------------------------------------------------------------------
+Added a tagging system to add pictures and format text inside contributions
+  [i] toggles italics
+  [b] toggles bolding
+  [u] toggles underlining
+  [img <img url>] inserts an image
+===============================================================================
+
+sophiaX --2018-10-25 8:17PM
+-------------------------------------------------------------------------------
+redirected users back to login screen from view page if not logged in.
+Updated app.py with comments for all but one function.
+===============================================================================
+
+sophiaX --2018-10-25 8:17PM
+-------------------------------------------------------------------------------
+Updated util package with comments for all functions.
+===============================================================================
+
+sophiaX --2018-10-25 10:17PM
+-------------------------------------------------------------------------------
+Updated html files with comments where necessary.
+===============================================================================
+
+xiaojieL --2018-10-26 9:30AM
+-------------------------------------------------------------------------------
+* updated spacing
+===============================================================================
+
+sophiaX --2018-10-27 2:09PM
+-------------------------------------------------------------------------------
+Updated README with instructions on how to use formatting tags
+===============================================================================
+
+sophiaX --2018-10-27 2:09PM
+-------------------------------------------------------------------------------
+discover redirects to contribute when there are no stories in the database
+changed logout link on the create account page to a login link
+added a few stories to the database
+===============================================================================
+
+sophiaX --2018-10-27 10:02PM
+-------------------------------------------------------------------------------
+redirect to discover if story isn't found in edit
+redirect to profile if story isn't found in view
+===============================================================================
+
+kevinL --2018-10-27 10:06PM
+-------------------------------------------------------------------------------
+Redirect to index if trying to get to auth by typing it in the URL
+===============================================================================
+
+kevinL --2018-10-28 5:45PM
+-------------------------------------------------------------------------------
+Fixed view problem if user hasn't contributed yet
+===============================================================================
+
+sophiaX --2018-10-28 11:49PM
+-------------------------------------------------------------------------------
+bring devlog into compliance
 ===============================================================================
