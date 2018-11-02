@@ -1,6 +1,28 @@
 <!DOCTYPE html>
 <html>
   <head>
+
+    <style>
+      body {
+      background-color: linen;
+      }
+
+      h1 {
+      color: maroon;
+      }
+
+      p {
+      border-style: dotted;
+      }
+
+      .story{ 
+      background-color: black; 
+      color: white; 
+      padding: 8px; 
+      } 
+    </style>
+    
+    <link rel="stylesheet" type="text/css" href="skar.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -14,11 +36,11 @@
 
   <footer>
     {% block logout %}
-      <center><a href = '/logout'>Log Out</a></center>
+    <center><a href = '/logout'>Log Out</a></center>
     {% endblock %}
     {% block footer %}
     <br>
-      <center> &copy; SKAR </center>
+    <center> &copy; SKAR </center>
     {% endblock %}
   </footer>
 </html>

@@ -16,10 +16,11 @@
     <h1>
         {{ story }}
     </h1>
+    
     _______________________________________________________
 </center>
 <br>
-<center>
+<center class="story">
   {% for each in content %}
   <!--'|safe' enables html tags-->
   {{each|safe}} <b>- {{prev(story, each)}}</b><br><br>
